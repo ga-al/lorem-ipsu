@@ -4,7 +4,6 @@
 
 - HTML,
 - SCSS,
-- Gulp,
 - JS
 
 
