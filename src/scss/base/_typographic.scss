@@ -1,0 +1,23 @@
+.h1 {
+    width: 35.625rem;
+    font-size: clamp(2.875rem, 2.25rem + 3.125vw, 6rem);
+	font-weight: 500;
+    line-height: 1.1;
+
+    @include xl {
+        width: 30.625rem;
+    }
+    
+    @include lg {
+        width: 100%;
+    }
+}
+
+.h2 {
+    font-size: clamp(2rem, 1.9rem + 0.5vw, 2.5rem);
+	font-weight: 600;
+    line-height: clamp(2rem, 1.9rem + 0.5vw, 2.5rem);
+}
+.text-uppercase {
+    text-transform: uppercase;
+}

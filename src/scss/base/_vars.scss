@@ -1,0 +1,59 @@
+:root {
+	--container-width: 1640px;
+	--container-padding: 15px;
+	--container-md-padding: 10px;
+
+	--font-main: sans-serif;
+	--font-accent: 'Lexend', sans-serif;
+	--font-titles: var(--font-accent);
+
+	--page-bg: #191D0A;
+	--block-bg: #311212;
+	--text-color: #fff;
+	--accent: #F97247;
+	--link-color: #F97247;
+	--navbar-button: #EBF29D;
+	--icon-color-yellow: #EBF29D;
+	--icon-color-green: #11F8A5;
+	--icon-color-pink: #DA7DB5;
+	--icon-color-light: #fff;
+
+
+    --laptop-size: 1199px;
+	--tablet-size: 959px;
+	--mobile-size: 599px;
+
+}
+
+.text-accent {
+	color: var(--accent);
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.dark {
+    --page-bg: #252526;
+    --text-color: #fff;
+}
+
+.icon.svg-yellow {
+	fill: var(--icon-color-yellow);
+}
+
+.icon.svg-pink {
+	fill: var(--icon-color-pink);
+}
+
+.icon.svg-green {
+	fill: var(--icon-color-green);
+}
+
+.icon.svg-light {
+	fill: var(--icon-color-light);
+}
+
+.border-white {
+	border-color: white!important;
+}

@@ -1,0 +1,27 @@
+header.header 
+    .container 
+        .header__row 
+            .header__nav.nav 
+                ul.nav__list 
+                    li 
+                        a(href="#" data-i18n="nav_about") About us
+                    li 
+                        a(href="#" data-i18n="nav_grand") Grand
+                    li 
+                        a(href="#" data-i18n="nav_commissions") Commissions
+                    li 
+                        a(href="#" data-i18n="nav_blub") Blub
+                    li 
+                        a(href="#" data-i18n="nav_contact") Contact us
+                    li 
+                        a(href="#" data-i18n="nav_careers") Careers
+            .header__buttons 
+                button.btn-navbar.btn-lang.btn-outline.text-uppercase(type="button" data-i18n-aria="aria_lang" aria-label="Change language")
+                    svg.icon.icon--planet(aria-hidden="true")
+                        use(href="./img/svgsprite/sprite.symbol.svg#planet")
+                    span.language En
+                button.btn-navbar.btn-outline.text-uppercase(type="button" data-i18n="btn_login") Log in
+                button.btn-navbar.btn-accent.text-uppercase(type="button" data-i18n="btn_signup") Sign up
+            button.mobile-nav-btn(type="button" data-i18n-aria="aria_menu" aria-label="Open menu" aria-expanded="false")
+                .nav-icon
+include mobile-nav

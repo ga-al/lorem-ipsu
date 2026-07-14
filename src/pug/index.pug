@@ -1,0 +1,92 @@
+-
+	const marqueeColumns = [
+		[
+			{ name: 'shield', color: 'svg-yellow' },
+			{ name: 'dollar', color: 'svg-green', extra: 'border-long' },
+			{ name: 'soccer', color: 'svg-yellow' },
+			{ name: 'mountains', color: 'svg-pink' },
+			{ name: 'shield', color: 'svg-yellow' },
+			{ name: 'dollar', color: 'svg-green', extra: 'border-long' },
+			{ name: 'soccer', color: 'svg-yellow' },
+			{ name: 'mountains', color: 'svg-pink' },
+		],
+		[
+			{ name: 'mountains', color: 'svg-light' },
+			{ name: 'timer', color: 'svg-pink' },
+			{ name: 'crown', color: 'svg-light', extra: 'crown-dark' },
+			{ name: 'world', color: 'svg-green', extra: 'border-long' },
+			{ name: 'mountains', color: 'svg-light' },
+			{ name: 'timer', color: 'svg-pink' },
+			{ name: 'crown', color: 'svg-light', extra: 'crown-dark' },
+			{ name: 'world', color: 'svg-green', extra: 'border-long' },
+		],
+		[
+			{ name: 'crown', color: 'svg-light', extra: 'border-long crown-dark' },
+			{ name: 'mountains', color: 'svg-green' },
+			{ name: 'shield', color: 'svg-yellow' },
+			{ name: 'soccer', color: 'svg-light', extra: 'border-white border-long' },
+			{ name: 'shield', color: 'svg-yellow' },
+			{ name: 'crown', color: 'svg-light', extra: 'crown-dark' },
+			{ name: 'mountains', color: 'svg-green' },
+			{ name: 'soccer', color: 'svg-yellow' },
+		],
+	]
+
+	const posts = [
+		{ active: true, text: 'Payment methods: Skrill, Neteller, webmoney, Bank transfer', date: '10.02.2023' },
+		{ text: 'Payment methods: Skrill, Neteller, webmoney, Bank transfer', date: '10.02.2023' },
+		{ text: 'Payment methods: Skrill, Neteller, webmoney, Bank transfer', date: '10.02.2023' },
+		{ text: 'Payment methods: Skrill, Neteller, webmoney, Bank transfer', date: '10.02.2023' },
+		{ text: 'Payment methods: Skrill, Neteller, webmoney, Bank transfer', date: '10.02.2023' },
+	]
+
+mixin marquee-icon(item)
+	span(class=item.extra || undefined)
+		svg.icon(class=`icon--${item.name} ${item.color}` aria-hidden="true")
+			use(href=`./img/svgsprite/sprite.symbol.svg#${item.name}`)
+
+mixin marquee-column(items)
+	.marquee-infinity
+		div
+			- for (let i = 0; i < 2; i++)
+				span
+					each item in items
+						+marquee-icon(item)
+
+html 
+	head 
+		meta(charset="UTF-8")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		title Lorem IPSU
+		link(rel="icon" href="./img/favicons/favicon.svg" type="image/svg+xml")
+		link(href="./css/main.css" rel="stylesheet")
+	body 
+		include blocks/header
+		main.home-page.main
+			.container
+				.main__wrapper
+					.main__content-left 
+						.container
+							h1.h1 
+								span.nowrap(data-i18n="hero_title") Lorem IPSU 
+								br
+								span.text-accent(data-i18n="hero_accent") OPEN
+							p(data-i18n="hero_subtitle") Maybe You Maybe Me. 
+							button.btn.btn-accent.text-uppercase(type="button" data-i18n="btn_partner") Partner
+					.main__content-center 
+						each column in marqueeColumns
+							+marquee-column(column)
+					.main__content-right
+						.container
+							h2.h2(data-i18n="posts_title") BLUB
+							.posts
+								.block-overlay 
+									.posts__scroll
+										each post in posts
+											.post(class=post.active ? 'active' : undefined)
+												button(type="button")  
+													p(data-i18n="post_text")= post.text
+													span.date= post.date
+		include blocks/footer
+		script(src="js/index.bundle.js")
